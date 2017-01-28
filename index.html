@@ -29,7 +29,7 @@
 <body class="">
     <div id="page-wrapper">
         <header id="header" class="with-banner alt">
-            <a href="javascript:window._pxOpen(&#39;index.html&#39;);" class="logo">HIWA Kapsalon</a>
+            <a href="#" class="logo">HIWA Kapsalon</a>
             
         </header>
         <section id="banner" data-video="images/banner">
@@ -47,29 +47,31 @@
         </section>
         <div id="wrapper">
             <section id="one" class="main" style="background:#555;color:white;">
-                <div class="inner spotlight style1 inactive">
-                    <div class="content" style="padding-right: 10%">
+                <div class="inner spotlight style1 inactive features featuresoverride ">
+                    <div class="content" style="padding: 10% 0 0 10%" >
                         <header>
                             <h2 style="color:white;">Over Hiwa</h2>
                         </header>
                         <p  class="justify">Hiwa is een onmisbare collega en een prominent lid van ons team. Op 10-jarige leeftijd kwam Hiwa al in aanraking met het vakgebied. Wat begon met het assisteren in de zaak van zijn broer is uitgegroeid tot het 17 jaar runnen van een succesvolle kapperszaak. Dit geeft blijk van een hoog niveau van ervaring en integriteit. Het komt zelden voor dat een kapper op zo'n jonge leeftijd al ruim 20 jaar ervaring heeft. Daarom is het natuurlijk niet raar dat Hiwa tevreden en loyale klanten heeft die uit alle hoeken van het land komen.</p>
                     </div>
-                    <div class="content" >
-                    <span class=""><img class="img-circle img-responsive" style="height: 75%;width: 75%;" src="images/kapsalon/about-1.jpg" alt=""></span>
+                    <div class="content" style="border-left: none !important" >
+                    <span class=""><img class="icon img-circle img-responsive" style="height: 75%;width: 75%" src="images/kapsalon/about-1.jpg" alt=""></span>
                     </div>
                     </div>
             </section>
+            
             <section id="two" class="main">
-                <div class="inner spotlight alt style2 inactive">
-                    <div class="content">
+                <div class="inner spotlight alt style2 inactive features featuresoverride">
+                    <div class="content" style="padding: 0 0 0 0">
                         <header>
                             <h2>"...op zo'n jonge leeftijd al ruim 20 jaar ervaring..."</h2>
                         </header>
                         <p class="justify">Mocht u persoonlijk kennis willen maken met het werk van deze professionele kapper en ervaren hoe het is om maatwerk geleverd te krijgen, maak dan snel een afspraak of kom langs in de winkel! Onder het genot van een bakje versgemalen koffie en heerlijke muziek zullen onze medewerkers u van dienst zijn.</p>
                     </div>
-                    <span class=""><img class="img-circle img-responsive" style="height: 75%;width: 75%" src="images/kapsalon/about-2.jpg" alt=""></span>
+                    <span class=""><img class="icon img-circle img-responsive" style="height: 75%;width: 75%;margin-left: 20%" src="images/kapsalon/about-2.jpg" alt=""></span>
                 </div>
-            </section>      
+            </section> 
+           
             
             <section id="three" class="main special" style="background:#555;color:white;">
                 <div class="inner">
@@ -159,6 +161,16 @@
                 
                 </div>
             </section>
+            <section id="contact" class="map">
+        <iframe width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://www.google.com/maps/embed/v1/place?q=Kapsalon%20Hiwa&key=AIzaSyCAc8y_9Xm9iBqD8rlWEGJ12cBy6i8Rt9M"></iframe>
+        <br />
+        <iframe>
+        <small>
+            <a href="https://www.google.com/maps/embed/v1/place?q=Kapsalon%20Hiwa&key=AIzaSyCAc8y_9Xm9iBqD8rlWEGJ12cBy6i8Rt9M"></a>
+        </small>
+        </iframe>
+    </section>
+            
             
             <!--
             <section id="four" class="main special" style="background:#f27373;"><!--#bd6060-->
@@ -234,5 +246,24 @@
         </ul>
         <a href="#menu" class="close" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></a>
     </nav>
+    <script>
+                var onMapMouseleaveHandler = function(event) {
+        var that = $(this);
+        that.on('click', onMapClickHandler);
+        that.off('mouseleave', onMapMouseleaveHandler);
+        that.find('iframe').css("pointer-events", "none");
+    }
+    var onMapClickHandler = function(event) {
+            var that = $(this);
+            // Disable the click handler until the user leaves the map area
+            that.off('click', onMapClickHandler);
+            // Enable scrolling zoom
+            that.find('iframe').css("pointer-events", "auto");
+            // Handle the mouse leave event
+            that.on('mouseleave', onMapMouseleaveHandler);
+        }
+        // Enable map zooming with mouse scroll when the user clicks the map
+    $('.map').on('click', onMapClickHandler);
+            </script>
 </body>
 </html>
