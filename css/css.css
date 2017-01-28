@@ -1244,6 +1244,7 @@
         .thumbnail {
             padding: 0;
         }
+       
 
         .carousel-inner>.item>img, .carousel-inner>.item>a>img {
             width: 100%;
@@ -1261,6 +1262,20 @@
             .spotlight .image:after {
                 background-color: #eaeaea;
             }
+            
+            .about {
+                -moz-transform: scale(1.0);
+                -webkit-transform: scale(1.0);
+                -ms-transform: scale(1.0);
+                transform: scale(1.0);
+                -moz-transition: opacity 1s ease, -moz-transform 1s ease;
+                -webkit-transition: opacity 1s ease, -webkit-transform 1s ease;
+                -ms-transition: opacity 1s ease, -ms-transform 1s ease;
+                transition: opacity 1s ease, transform 1s ease;
+                opacity: 1;
+           
+        }   
+           
 
         .features {
             display: -moz-flex;
@@ -1274,13 +1289,24 @@
             border: solid 2px;
             border-radius: 20px;
             margin: 3.5em 0 3.5em 0;
-        }
-
+            
+        }   
+       
             .features > * {
                 padding: 2em 4em 2em 4em;
                 border-left: solid 2px;
                 border-top: solid 2px;
                 width: 50%;
+            }
+            
+            .featuresoverride {
+                border: none !important;
+                border-radius: 0 !important;
+                margin: 0 0 0 0 !important;
+                padding: 0 0 0 0 !important;
+                border-left: none !important;
+                border-top: none !important;
+                width: 100% !important;
             }
 
                 .features > * .icon {
@@ -1449,6 +1475,22 @@
             #page-wrapper {
                 padding-top: 2.75em;
             }
+        }
+        
+        .map {
+            height:500px;
+            display: block;
+            padding: 0 0 0 0;
+        }
+        
+        @media(max-width:768px) {
+            .map {
+            height: 75%;
+            }
+        }
+        
+        .map iframe {
+            pointer-events: none;
         }
 
         #header {
